@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+
+<head>
+    <title>Home</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="ISO-8895-1">
+    <meta name="description" content="Watch Free Football Matches | Live Stream|">
+    <meta name="keywords" content="Watch, Free, Live , Football, Matches, Soccer ">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--CSP Directives-->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: https://mdbootstrap.com https://image-service.onefootball.com https://oneftbl-cms.imgix.net https://static0.givemesportimages.com https://cdn.datatables.net https://www.stlghana.com; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://unpkg.com https://cdn.datatables.net; script-src 'self' https://code.jquery.com https://cdn.jsdelivr.net https://code.iconify.design https://kit.fontawesome.com https://ka-f.fontawesome.com ajax.googleapis.com 'unsafe-inline' cdnjs.cloudflare.com https://unpkg.com https://cdn.datatables.net; img-src 'self' data: https://mdbootstrap.com https://image-service.onefootball.com https://oneftbl-cms.imgix.net https://icdn.caughtoffside.com https://static0.givemesportimages.com https://cdn.datatables.net https://www.stlghana.com; font-src 'self' https://kit.fontawesome.com https://ka-f.fontawesome.com; connect-src 'self' https://football98.p.rapidapi.com;">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <link rel="shortcut icon" type="x-icon" href="img/icon.jpg">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+
+    <link th:href="@{/css/styles.css}" rel="stylesheet" type="text/css">
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/dataTables.bootstrap5.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/select/1.5.0/css/select.bootstrap5.min.css">
+
+    <!-- jQuery -->
+    <script th:src="@{https://code.jquery.com/jquery-3.5.1.min.js}"></script>
+
+    <!-- DataTables -->
+    <link rel="stylesheet" type="text/css" th:href="@{https://cdn.datatables.net/1.10.23/css/jquery.dataTables.css}" />
+    <script type="text/javascript" charset="utf8" th:src="@{https://cdn.datatables.net/1.10.23/js/jquery.dataTables.js}"></script>
+
+
+    <style>*{
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+    }
+
+    html{
+        padding: 0px;
+        margin: 0px;
+        background-color: whitesmoke;
+        overflow-x: hidden;
+        width: auto;
+        height: auto;
+    }
+
+    body{
+        padding: 0px;
+        margin: 0px;
+        background-color: whitesmoke;
+        overflow-x: hidden;
+        width: auto;
+        height: auto;
+    }
+
+    nav li{
+        display: inline-block;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .navigation, .navigation1{
+        color: black;
+        background-repeat: no-repeat;
+        width: 100vw;
+        height: 50px;
+        background-color: #0d6efd;
+        background-image: linear-gradient(whitesmoke, #0d6efd);
+        z-index: 1;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+
+    .nav_buttons{
+        position: absolute;
+        top: 0px;
+        right: 5px;
+        z-index: 1;
+        background-color: black;
+    }
+
+
+    li{
+        margin: 6px;
+        padding: 0px 5px;
+
+    }
+
+    li:hover {
+        background-color: whitesmoke;
+        border-radius: 30%;
+    }
+
+
+    .bodyClass{
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 100vw;
+        height: auto;
+        color: black;
+        font-family: serif;
+    }
+
+    a {
+        color: black !important;
+        text-decoration: none !important;
+    }
+
+
+    .navigation1{
+        color: black;
+        background-repeat: no-repeat;
+        width: 100vw;
+        height: 50px;
+        background-color: #0d6efd;
+        background-image: linear-gradient(#0d6efd ,whitesmoke);
+        z-index: 1;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .left_nav_text1{
+        color: whitesmoke;
+        position: absolute;
+        top: 12px;
+        left: 20px;
+        z-index: 1;
+        padding: 10px;
+    }
+
+    .right_nav_text1{
+        color: whitesmoke;
+        position: absolute;
+        top: 12px;
+        right: 20px;
+        z-index: 1;
+        padding: 10px;
+
+    }
+
+    .navigation2{
+        /*background-image: url('C:/Users/Jnr/Desktop/Programming/Pious Website/Pious Website/pics/icon.png');*/
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 100px;
+        background-color: #0d6efd;
+        background-image: linear-gradient(#0d6efd,whitesmoke);
+        z-index: 1;
+        display: inline-block;
+        flex-wrap: wrap;
+        margin-bottom: 0px;
+    }
+
+    .nav_pic_logo{
+        position: relative;
+        width: auto;
+        height: 80px;
+        clip-path: circle();
+        float: left;
+        margin-left: 50px;
+        margin-right: 15px;
+        top: 10px;
+    }
+
+
+    h3{
+        position: relative;
+        top: 25px;
+    }
+
+    .right_nav_text2 {
+        color: whitesmoke;
+        position: absolute;
+        top: 50px;
+        right: 10px;
+        z-index: 1;
+        padding: 10px;
+        margin: 10px;
+        display: inline-block;
+    }
+
+    .list{
+        display: inline-block;
+    }
+
+
+
+
+
+    .btn{
+        background-color: #212529;
+        border-color: black;
+        color: whitesmoke;
+    }
+
+
+    button{
+        background-color: #212529 !important;
+        padding: 10px;
+        border-radius: 5px;
+        color: whitesmoke;
+    }
+
+    .nav-text{
+        color: whitesmoke;
+        position: absolute;
+        top: 12px;
+        left: 12px;
+        z-index: 1;
+        font-family: sans-serif;
+    }
+
+
+    .menu {
+        display: flex;
+        justify-content: flex-end;
+        list-style: none;
+        padding: 0;
+    }
+
+    .menu li {
+        margin-right: 20px;
+    }
+
+    .menu li a {
+        color: #fff;
+        text-decoration: none;
+        padding: 10px 10px 0px 10px;
+    }
+
+    .navbar-icon {
+        display: none;
+        cursor: pointer;
+        color: #fff;
+        font-size: 20px;
+    }
+
+
+    .table{
+        box-shadow: 0 8.5px 17px rgba(0, 0, 0, 0.5) !important;
+    }
+
+    .bg-primary{
+        box-shadow: 0 8.5px 17px rgba(0, 0, 0, 0.5) !important;
+    }
+
+    #updateModal {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: auto;
+        padding: 100px;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: none;
+        z-index: 1;
+
+    }
+
+    #insertModal{
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: auto;
+        padding: 100px;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: none;
+        z-index: 1;
+
+    }
+
+    #detailsModal {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: auto;
+        padding: 100px;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: none;
+        z-index: 1;
+    }
+
+    #statisticsModal {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: auto;
+        padding: 100px;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: none;
+        z-index: 1;
+    }
+
+    #updateForm, #insertForm, #detailsForm, #statistics{
+        position: relative;
+        width: auto;
+        max-width: 400px;
+        margin: auto; /* Center the form horizontally */
+        background-image: linear-gradient(#0d6efd, whitesmoke, #0d6efd);
+        border-radius: 5px;
+        text-align: center;
+        padding: 20px;
+
+    }
+
+    .modal-content {
+        width: 240px;
+        position: relative;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: sans-serif;
+        background-color: #0d6efd;
+    }
+
+    .modal-overlay {
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: flex;
+        align-items: center; /* Center vertically */
+        justify-content: center;
+        position: relative;
+        z-index: 1;
+    }
+
+    .card-body{
+        background-color: #0d6efd;
+        font-family: sans-serif;
+        font-size: large;
+    }
+
+    .openInsertModalButton{
+        margin-bottom: 0 !important;
+        position: relative;
+        right: 50vw;
+        padding: 5px;
+    }
+
+    .submit {
+        display: block;
+        width: 100%;
+        max-width: 400px;
+        margin: 0; /* Center the button horizontally */
+        cursor: pointer;
+    }
+
+    .close {
+        position: relative;
+        width: 100%;
+        top: 0;
+        right: 0;
+        cursor: pointer;
+    }
+
+    .footer_socials{
+        position: absolute;
+        /*float: right;*/
+        right: 20px;
+    }
+
+
+    .index_page_cards{
+        align-content: center;
+        box-shadow: 0px 2px 15px rgba(0,0,0,0.15) !important;
+        border-radius: 10px;
+        margin-bottom: 0px !important;
+        display: flex;
+        justify-content: center;
+        height: auto !important;
+    }
+
+    .index_card{
+        display: inline-block;
+        margin: 30px 60px 30px 60px;
+        background-image: linear-gradient(whitesmoke, #0d6efd, whitesmoke);
+        box-shadow: 0px 2px 15px rgba(0,0,0,0.15);
+        border-radius: 10px;
+        width: 18rem
+    }
+
+    .d-block{
+        height: 70vh;
+        width: 100vw;
+        object-fit: cover;
+    }
+
+
+    .card-title{
+        margin: 10px 0 20px 0;
+    }
+
+
+    .card-body{
+        display: inline-block;
+        margin: 10px 40px 20px 40px;
+        background-color: #0d6efd;
+        color: whitesmoke;
+        font-family: sans-serif;
+        height: auto;
+        border-radius: 10px;
+        flex: none !important;
+    }
+
+
+    .index-card-body{
+        display: inline-block;
+        margin: 10px 40px 20px 40px;
+        background-color: #0d6efd;
+        color: whitesmoke;
+        font-family: sans-serif;
+        height: auto;
+        padding: 50px 30px !important;
+        border-radius: 10px;
+        flex: none !important;
+    }
+
+    .horizontal_card-body{
+        margin: 10px 40px 20px 40px;
+        background-color: #0d6efd;
+        color: whitesmoke;
+        font-family: sans-serif;
+        height: auto;
+        width: 40vw;
+        padding: 20px 30px;
+        border-radius: 10px;
+
+    }
+
+    .horizontal_card{
+        display: flex; /* Use flexbox to create a horizontal layout */
+        align-items: center; /* Align items vertically in the center */
+        height:30% ;
+        background-color: #0d6efd;
+        padding: 0px;
+        margin: 0px;
+        box-shadow: 0px 2px 15px rgba(0,0,0,0.15);
+        border-radius: 10px;
+        width: 100% !important;
+        max-width: 100%;
+
+    }
+
+    .col-md-6{
+        display: flex; /* Use flexbox to create a horizontal layout */
+        align-items: center; /* Align items vertically in the center */
+        height:30% ;
+        background-color: #0d6efd;
+        padding: 10vh 0;
+        margin: 30px 0px !important;
+        box-shadow: 0px 2px 15px rgba(0,0,0,0.15);
+        border-radius: 10px;
+        width: 100% !important;
+        max-width: 100%;
+
+    }
+
+    .card-img-top1{
+        height: 192px;
+        width: 288px;
+        margin-top: 0px;
+        margin-bottom: 20px;
+        border-radius: 10px 10px 0 0;
+
+    }
+
+
+
+    .News_cards{
+        align-content: center;
+        padding: 50px 30px;
+        box-shadow: 0px 2px 15px rgba(0,0,0,0.15);
+        border-radius: 10px;
+        margin: 10px 0px;
+        background-image: linear-gradient(whitesmoke, whitesmoke);
+    }
+
+
+    .News_card1, .News_card2, .News_card3{
+        display: inline-block;
+        margin: 10px 35px 20px 35px;
+        width: 27%;
+        margin-left: 30px;
+        padding: 60px 30px;
+        box-shadow: 0px 2px 15px rgba(0,0,0,0.15);
+        border-radius: 10px;
+        background-color: #0d6efd;
+        text-align: center;
+    }
+
+
+    .card-title, .card-text{
+        margin: 10px !important;
+        padding: 5px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center !important;
+        background-color: #0d6efd;
+        color: whitesmoke
+    }
+
+    #card-title{
+        margin: 10px !important;
+        padding: 5px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center !important;
+        background-color: darkblue;
+        color: whitesmoke
+    }
+
+    #horizontal_card_image{
+        border-radius: 10px 10px 10px 10px !important;
+        width: 40vw;
+        height: 40vh;
+        vertical-align: middle;
+        margin:10px 40px ;
+    }
+
+
+
+
+    .footerClass{
+        height: 80px;
+        background-color: #0d6efd;
+        color: whitesmoke;
+        text-align: center;
+        padding: 20px 0px 20px 0;
+        margin-top: 0px;
+        box-shadow: 0 8.5px 17px rgba(0, 0, 0, 0.5) !important;
+        display: flex;
+        align-items: center; /* Center vertically */
+        justify-content: center;
+    }
+
+    </style>
+
+
+
+</head>
+<body class="${someCondition} ? 'dark-theme' : 'light-theme'">
+
+<div class="row">
+    <nav class="navigation1"><div class="left_nav_text1">
+
+        <a href="#"><svg xmlns="http://www.w3.org/2000/svg" class="animate__animated animate__fadeInRight" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M10.5 20h3q.2 0 .35-.15t.15-.35q0-.2-.15-.35T13.5 19h-3q-.2 0-.35.15t-.15.35q0 .2.15.35t.35.15ZM7 23q-.825 0-1.413-.588T5 21V3q0-.825.588-1.413T7 1h10q.825 0 1.413.588T19 3v18q0 .825-.588 1.413T17 23H7Zm0-7h10V6H7v10Z"/></svg>(+233) 030 2782646/7</a>
+    </div>
+
+    </nav>
+</div>
+<div>
+    <nav class="navigation2">
+
+        <a href="../Subscribers/index" class="nav_pic_header"><img src="/static/images/super_tech_logo.jpg" alt="Super Tech Logo" class="nav_pic_logo animate__animated animate__bounce" loading="lazy"> <h3 class="animate__animated animate__fadeInLeft" th:alt="logo">STL Mobile Subscribers</h3></a>
+
+        <div class="right_nav_text2">
+
+
+            <ul class="menu animate__animated animate__fadeInLeft">
+                <li class="list"><a href="index">Home</a> </li>
+                <li class="list"><a href="sign_up"><button class="btn animate__animated animate__rubberBand animate">Sign Up</button></a></li>
+                <li class="list"><a href="login"><button class="btn">Log In</button></a></li>
+                <li class="list"><a href="https://www.stlghana.com/company-profile/">About Us</a> </li>
+                <li class="list"><a href="https://www.stlghana.com/"><button class="btn animate__animated animate__rubberBand animate">Visit Our Site</button></a></li>
+            </ul>
+        </div>
+    </nav>
+</div>
+
+<div class="index_page_cards" data-aos="fade-right">
+    <a href="#">
+        <div class="index_card" style="width: 18rem !important;">
+            <img src="https://www.stlghana.com/wp-content/uploads/2021/03/Slide-1-IMG-scaled-100x50.jpg" class="card-img-top1" alt="..." loading="lazy" >
+            <div class="index-card-body">
+                <p>STL Ghana's innovative solutions drive progress, transforming industries with cutting-edge technology.
+                </p>
+
+            </div>
+        </div>
+    </a>
+    <a href="#">
+        <div class="index_card" style="width: 18rem !important;">
+            <img src="https://www.stlghana.com/wp-content/uploads/2021/03/STL-BOG-11-9-of-24-100x50.jpg" class="card-img-top1" alt="..." loading="lazy" >
+
+            <div class="index-card-body">
+                <p>STL Ghana's unwavering commitment to quality sets a benchmark for technological excellence.
+                </p>
+            </div>
+        </div>
+    </a>
+    <a href="#">
+        <div class="index_card" style="width: 18rem !important;">
+            <img src="https://www.stlghana.com/wp-content/uploads/2021/03/Slide-4-IMG-2-100x50.jpg" class="card-img-top1" alt="..." loading="lazy" >
+
+            <div class="index-card-body">
+                <p>Their visionary leadership empowers communities and businesses through digital transformation.
+                </p>
+
+            </div>
+        </div></a>
+    <a href="#">
+        <div class="index_card" style="width: 18rem !important;">
+            <img src="https://www.stlghana.com/wp-content/uploads/2021/03/Slide-7-IMG-100x50.jpg" class="card-img-top1" alt="..." loading="lazy" >
+
+            <div class="index-card-body">
+                <p>STL Ghana's customer-centric approach ensures seamless tech experiences, fostering lasting partnerships.
+                </p>
+
+            </div>
+        </div></a>
+</div>
+
+<div class="horizonal_card" data-aos="fade-up">
+    <div class="horizontal_card mb-3" style="max-width: 99%;">
+        <div class="row g-0">
+            <div class="col-md-6">
+                <div class="horizontal_card-body">
+                    <p>
+                    STL Ghana's relentless pursuit of innovation propels the nation towards a digital future.
+                    Their tech prowess fuels connectivity, enabling communication beyond boundaries in Ghana.
+                    STL Ghana's eco-friendly initiatives align with a sustainable, tech-driven tomorrow.
+                    Exceptional talent and ethics make STL Ghana a beacon of technological ethics.
+                    STL Ghana's commitment to empowerment resonates in every digital milestone achieved.
+                    </p>
+                </div>
+                <a><img src="https://www.stlghana.com/wp-content/uploads/2021/03/STL-BOG-11-9-of-24-100x50.jpg" class="card-img-top1" alt="..." loading="lazy" >
+                </a>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="News_cards" data-aos="fade-up">
+    <a href="#"><div class="News_card1 card-body">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="m14.096 3.076l1.634 2.292L24 3.076M5.503 20.924l4.474-4.374l-2.692-2.89m6.133-10.584L11.027 5.23l4.022.15M4.124 3.077l.857 1.76l4.734.294m-3.058 7.072l3.497-6.522L0 5.13m7.064 7.485l3.303 3.548l3.643-3.57l1.13-6.652l-4.439-.228Z"/></svg>
+        <hr>
+        <p>. STL Ghana's network solutions empower businesses to thrive in the digital age.
+
+            Their dedication to customer satisfaction sets a gold standard in tech industry service.
+            STL Ghana's social responsibility initiatives uplift communities, making a positive impact.
+            The company's forward-thinking R&D consistently introduces groundbreaking technological advancements.
+            STL Ghana's reliability ensures a brighter tomorrow.
+        </p>
+    </div></a>
+    <a href="#"><div class="News_card2 card-body">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M20 18c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2H0v2h24v-2h-4zM4 6h16v10H4V6z"/></svg>
+        <hr>
+        <p>6. STL Ghana's dynamic team of experts fuels continuous technological evolution.
+
+            Their secure and robust infrastructure safeguards Ghana's digital landscape.
+            STL Ghana's contributions to STEM education nurture future tech leaders in the nation.
+            Their cutting-edge solutions bridge the digital divide, fostering inclusivity for all.
+            STL Ghana's innovation ecosystem nurtures a culture of progress and innovation.
+        </p>
+    </div></a>
+    <a href="#"><div class="News_card3 card-body">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M8.6 16.6L4 12l4.6-4.6L10 8.85L6.85 12L10 15.15L8.6 16.6ZM5 17h2v1h10v-1h2v4q0 .825-.588 1.413T17 23H7q-.825 0-1.413-.588T5 21v-4ZM7 7H5V3q0-.825.588-1.413T7 1h10q.825 0 1.413.588T19 3v4h-2V6H7v1Zm8.4 9.6L14 15.15L17.15 12L14 8.85l1.4-1.45L20 12l-4.6 4.6Z"/></svg>
+        <hr>
+        <p> STL Ghana's global partnerships amplify their mission to connect the world.
+
+            Their commitment to cybersecurity fortifies Ghana's digital resilience against threats.
+            STL Ghana's unwavering dedication to excellence inspires trust among stakeholders.
+            The company's green initiatives align with a sustainable, eco-conscious tech future.
+            STL Ghana's visionary leadership paves the way for a prosperous digital Ghana.</p>
+    </div>
+    </a>
+</div>
+
+<footer class="footerclass" style="background-color: black; color: whitesmoke; text-align: center; padding: 20px 0px 20px 0;">
+    Copyright &copy; 2023
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="index.js" charset="utf-8"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/mdb-ui-kit@3.11.0/js/mdb.min.js"></script>
+
+<script>
+    AOS.init();
+</script>
+
+<!--&lt;!&ndash; Modal &ndash;&gt;-->
+<!--<div id="emailModal" class="modal-overlay">-->
+<!--    <div class="modal-content">-->
+<!--        <span class="close" onclick="closeModal()">&times;</span>-->
+<!--        <form id="emailForm" action="/send-email" method="POST" onsubmit="sendEmail(event)">-->
+<!--            <input type="text" name="name" placeholder="Your Name" required>-->
+<!--            <input type="email" name="email" placeholder="Your Email" required>-->
+<!--            <textarea name="message" placeholder="Your Message" required></textarea>-->
+<!--            <input type="submit" value="Send">-->
+<!--        </form>-->
+<!--    </div>-->
+<!--</div>-->
+
+
+<script>
+    function openModal() {
+        var modal = document.getElementById("emailModal");
+        modal.style.display = "flex";
+    }
+
+    function closeModal() {
+        var modal = document.getElementById("emailModal");
+        modal.style.display = "none";
+    }
+</script>
+
+
+</body>
+</html>

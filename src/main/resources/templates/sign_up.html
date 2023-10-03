@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+
+<head>
+    <title>Sign Up</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="ISO-8895-1">
+    <meta name="description" content="Watch Free Football Matches | Live Stream|">
+    <meta name="keywords" content="Watch, Free, Live , Football, Matches, Soccer ">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--CSP Directives-->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: https://mdbootstrap.com https://image-service.onefootball.com https://oneftbl-cms.imgix.net https://static0.givemesportimages.com; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://unpkg.com https://cdn.datatables.net; script-src 'self' https://code.jquery.com https://cdn.jsdelivr.net https://code.iconify.design https://kit.fontawesome.com https://ka-f.fontawesome.com ajax.googleapis.com 'unsafe-inline' cdnjs.cloudflare.com https://unpkg.com https://cdn.datatables.net; img-src 'self' data: https://mdbootstrap.com https://image-service.onefootball.com https://oneftbl-cms.imgix.net https://icdn.caughtoffside.com https://static0.givemesportimages.com https://cdn.datatables.net; font-src 'self' https://kit.fontawesome.com https://ka-f.fontawesome.com; connect-src 'self' https://football98.p.rapidapi.com;">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <link rel="shortcut icon" type="x-icon" href="img/icon.jpg">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+
+    <link th:href="@{/css/styles.css}" rel="stylesheet" type="text/css">
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/dataTables.bootstrap5.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/select/1.5.0/css/select.bootstrap5.min.css">
+
+    <!-- jQuery -->
+    <script th:src="@{https://code.jquery.com/jquery-3.5.1.min.js}"></script>
+
+    <!-- DataTables -->
+    <link rel="stylesheet" type="text/css" th:href="@{https://cdn.datatables.net/1.10.23/css/jquery.dataTables.css}" />
+    <script type="text/javascript" charset="utf8" th:src="@{https://cdn.datatables.net/1.10.23/js/jquery.dataTables.js}"></script>
+
+
+    <style>*{
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+    }
+
+    html{
+        padding: 0px;
+        margin: 0px;
+        background-color: whitesmoke;
+        overflow-x: hidden;
+        width: auto;
+        height: auto;
+    }
+
+    body{
+        padding: 0px;
+        margin: 0px;
+        background-color: whitesmoke;
+        overflow-x: hidden;
+        width: auto;
+        height: auto;
+    }
+
+    nav li{
+        display: inline-block;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .navigation, .navigation1{
+        color: black;
+        background-repeat: no-repeat;
+        width: 100vw;
+        height: 50px;
+        background-color: #0d6efd;
+        background-image: linear-gradient(whitesmoke, #0d6efd);
+        z-index: 1;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+
+    .nav_buttons{
+        position: absolute;
+        top: 0px;
+        right: 5px;
+        z-index: 1;
+        background-color: black;
+    }
+
+
+    li{
+        margin: 6px;
+        padding: 0px 5px;
+
+    }
+
+    li:hover {
+        background-color: whitesmoke;
+        border-radius: 30%;
+    }
+
+
+    .bodyClass{
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 100vw;
+        height: auto;
+        color: black;
+        font-family: serif;
+    }
+
+    a {
+        color: black !important;
+        text-decoration: none !important;
+    }
+
+
+    .navigation1{
+        color: black;
+        background-repeat: no-repeat;
+        width: 100vw;
+        height: 50px;
+        background-color: #0d6efd;
+        background-image: linear-gradient(#0d6efd ,whitesmoke);
+        z-index: 1;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .left_nav_text1{
+        color: whitesmoke;
+        position: absolute;
+        top: 12px;
+        left: 20px;
+        z-index: 1;
+        padding: 10px;
+    }
+
+    .right_nav_text1{
+        color: whitesmoke;
+        position: absolute;
+        top: 12px;
+        right: 20px;
+        z-index: 1;
+        padding: 10px;
+
+    }
+
+    .navigation2{
+        /*background-image: url('C:/Users/Jnr/Desktop/Programming/Pious Website/Pious Website/pics/icon.png');*/
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 100px;
+        background-color: #0d6efd;
+        background-image: linear-gradient(#0d6efd,whitesmoke);
+        z-index: 1;
+        display: inline-block;
+        flex-wrap: wrap;
+        margin-bottom: 0px;
+    }
+
+    .nav_pic_logo{
+        position: relative;
+        width: auto;
+        height: 80px;
+        clip-path: circle();
+        float: left;
+        margin-left: 50px;
+        margin-right: 15px;
+        top: 10px;
+    }
+
+
+    h3{
+        position: relative;
+        top: 25px;
+    }
+
+    .right_nav_text2 {
+        color: whitesmoke;
+        position: absolute;
+        top: 50px;
+        right: 10px;
+        z-index: 1;
+        padding: 10px;
+        margin: 10px;
+        display: inline-block;
+    }
+
+    .list{
+        display: inline-block;
+    }
+
+
+
+
+
+    .btn{
+        background-color: #212529;
+        border-color: black;
+        color: whitesmoke;
+    }
+
+
+    button{
+        background-color: #212529 !important;
+        padding: 10px;
+        border-radius: 5px;
+        color: whitesmoke;
+    }
+
+    .nav-text{
+        color: whitesmoke;
+        position: absolute;
+        top: 12px;
+        left: 12px;
+        z-index: 1;
+        font-family: sans-serif;
+    }
+
+
+    .menu {
+        display: flex;
+        justify-content: flex-end;
+        list-style: none;
+        padding: 0;
+    }
+
+    .menu li {
+        margin-right: 20px;
+    }
+
+    .menu li a {
+        color: #fff;
+        text-decoration: none;
+        padding: 10px 10px 0px 10px;
+    }
+
+    .navbar-icon {
+        display: none;
+        cursor: pointer;
+        color: #fff;
+        font-size: 20px;
+    }
+
+    /* Sign Up Card */
+
+    .sign_up_bodyClass, .login_bodyClass{
+
+        /*background-image: url('C:/Users/Jnr/Desktop/Programming/Pious Website/Pious Website/pics/icon.png');*/
+        background-image: linear-gradient(darkblue, black);
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 100vw;
+        color: black;
+        font-family: serif;
+    }
+
+    form {
+        color: black;
+        font-family: serif;
+        max-width: 400px;
+        margin: 0 auto 0;
+        background-color: #fff;
+        padding: 20px 20px 10px 20px;
+        border-radius: 5px;
+        box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+        color: #444;
+    }
+
+    .username_text{
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 0px;
+        margin-top: 0px;
+        border-radius: 5px;
+        border: none;
+        background-color: #f1f1f1;
+        font-size: 16px;
+        color: #444;
+
+    }
+
+    .card-title
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    select {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 0px;
+        margin-top: 0px;
+        border-radius: 5px;
+        border: none;
+        background-color: #f1f1f1;
+        font-size: 16px;
+        color: black;
+    }
+
+    input[type="submit"] {
+        background-color: black;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease-in-out;
+    }
+
+
+    /* Form header */
+    h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: whitesmoke;
+        font-family: serif;
+    }
+
+    /* Sign up form specific styles */
+    #signup-form {
+        background-color: #f9f9f9;
+    }
+
+    /* Media queries */
+    @media screen and (max-width: 480px) {
+        form {
+            padding: 10px;
+        }
+
+        input[type="submit"] {
+            font-size: 14px;
+        }
+    }
+
+
+    .footer_socials{
+        position: absolute;
+        /*float: right;*/
+        right: 20px;
+    }
+
+    .footerClass{
+        height: 80px;
+        background-color: #0d6efd;
+        color: whitesmoke;
+        text-align: center;
+        padding: 20px 0px 20px 0;
+        margin-top: 0px;
+        box-shadow: 0 8.5px 17px rgba(0, 0, 0, 0.5) !important;
+        display: flex;
+        align-items: center; /* Center vertically */
+        justify-content: center;
+    }
+
+
+    </style>
+
+
+</head>
+<body class="${someCondition} ? 'dark-theme' : 'light-theme'">
+
+<div class="row">
+    <nav class="navigation1"><div class="left_nav_text1">
+
+        <a href="#"><svg xmlns="http://www.w3.org/2000/svg" class="animate__animated animate__fadeInRight" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M10.5 20h3q.2 0 .35-.15t.15-.35q0-.2-.15-.35T13.5 19h-3q-.2 0-.35.15t-.15.35q0 .2.15.35t.35.15ZM7 23q-.825 0-1.413-.588T5 21V3q0-.825.588-1.413T7 1h10q.825 0 1.413.588T19 3v18q0 .825-.588 1.413T17 23H7Zm0-7h10V6H7v10Z"/></svg>(+233) 030 2782646/7</a>
+    </div>
+
+    </nav>
+</div>
+<div>
+    <nav class="navigation2">
+
+        <a href="../Subscribers/index" class="nav_pic_header"><img src="/static/images/super_tech_logo.jpg" alt="Super Tech Logo" class="nav_pic_logo animate__animated animate__bounce" loading="lazy"> <h3 class="animate__animated animate__fadeInLeft" th:alt="logo">STL Mobile Subscribers</h3></a>
+
+        <div class="right_nav_text2">
+
+
+            <ul class="menu animate__animated animate__fadeInLeft">
+                <li class="list"><a href="index">Home</a> </li>
+                <li class="list"><a href="https://www.stlghana.com/company-profile/">About Us</a> </li>
+                <li class="list"><a href="https://www.stlghana.com/"><button class="btn animate__animated animate__rubberBand animate">Visit Our Site</button></a></li>
+            </ul>
+        </div>
+    </nav>
+</div>
+
+<div class="row" style="margin: 20px 30vw;">
+    <div class="sign_up_card" data-aos="fade-up">
+        <div class="sign_up_card_inner">
+            <div class="card-body">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M15 14c-2.67 0-8 1.33-8 4v2h16v-2c0-2.67-5.33-4-8-4m-9-4V7H4v3H1v2h3v3h2v-3h3v-2m6 2a4 4 0 0 0 4-4a4 4 0 0 0-4-4a4 4 0 0 0-4 4a4 4 0 0 0 4 4Z"/></svg>
+                <h2 class="card-title" style="color: black; font-family: serif;">Sign Up</h2>
+<!--                <form method="post" role="form" th:action="@{sign_up/save}" th:object="${subscriber}">-->
+                <form id="insertForm" method="post" role="form" th:action="@{sign_up/save}" th:object="${subscriber}" onsubmit="insertSubscriber();">
+                <div class="form-group">
+                        <label>First Name</label>
+                        <input id="insert_firstname"
+                                type="text"
+                                class="form-control"
+                               name="firstname"
+                                placeholder="First Name"
+                                th:field="*{firstname}">
+                    </div>
+
+                    <div class="form-group">
+                    <label>Last Name</label>
+                    <input id="insert_lastname"
+                            type="text"
+                            class="form-control"
+                           name="lastname"
+                           placeholder="Last Name"
+                            th:field="*{lastname}">
+            </div>
+            <div class="form-group">
+            <label>Phone Number</label>
+            <input id="insert_msisdn"
+                    type="text"
+                    class="form-control"
+                   name="msisdn"
+                   placeholder="Phone Number"
+                    th:field="*{msisdn}">
+        </div>
+                    <p th:if="${#fields.hasErrors('username')}" class="text-danger"></p>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input id="insert_email"
+                                type="text"
+                                class="form-control"
+                               name="email"
+                               placeholder="Email"
+                                th:field="*{email}">
+                    </div>
+                    <p th:if="${#fields.hasErrors('email')}" class="text-danger"></p>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input id="insert_password"
+                                type="password"
+                                class="form-control"
+                               name="password"
+                               placeholder="Password"
+                                th:field="*{password}">
+                    </div>
+                    <p th:if="${#fields.hasErrors('password')}" class="text-danger"></p>
+                    <button type="submit" class="btn btn-secondary">Register</button>
+                </form>
+                <a href="login"><button class="btn">Log In Here</button></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footerclass" style="background-color: black; color: whitesmoke; text-align: center; padding: 20px 0px 20px 0;">
+    Copyright &copy; 2023
+</footer>
+
+<!--INSERT-->
+<script>
+
+    function insertSubscriber(event) {
+        event.preventDefault(); // Prevent the default form submission
+
+        // Create a JavaScript object with the form data
+        let subscriberData = {
+            msisdn: document.getElementById('insert_msisdn').value,
+            firstname: document.getElementById('insert_firstname').value,
+            lastname: document.getElementById('insert_lastname').value,
+            email: document.getElementById('insert_email').value,
+            password: document.getElementById('insert_password').value, // Assuming you have an input field for password
+            // role: document.getElementById('insert_role').value, // Assuming you have an input field for role
+            // Add more fields as needed
+        };
+
+        console.log("the data",subscriberData)
+
+
+        // Send the data as a JSON request to the Spring Boot controller
+        fetch('/Subscribers/sign_up/save', { // Corrected URL
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(subscriberData)
+        })
+            .then(function(response) {
+                console.log("the response",response)
+                if (response.ok) {
+                    // Handle success here, e.g., show a success message
+                    alert('Subscriber added successfully');
+
+                } else {
+                    // Handle errors here, e.g., show an error message
+                    alert('Subscriber already Exists');
+                }
+            })
+            .catch(function(error) {
+                // Handle network errors here
+                console.error('Error:', error);
+            });
+
+        // ... Rest of the code remains the same
+    }
+
+    // Create a new row for the table
+    let newRow = document.createElement('tr');
+    // Create table cells for each field
+    let idCell = document.createElement('td');
+    let msisdnCell = document.createElement('td');
+    let customerOwnerIdCell = document.createElement('td');
+    let customerUserIdCell = document.createElement('td');
+    let firstnameCell = document.createElement('td');
+    let lastnameCell = document.createElement('td');
+    let emailCell = document.createElement('td');
+
+    // Populate the cells with values from the form
+    msisdnCell.textContent = document.getElementById('insert_msisdn').value;
+    console.log("the insert name",document.getElementById('insert_msisdn').value)
+    firstnameCell.textContent = document.getElementById('insert_firstname').value;
+    lastnameCell.textContent = document.getElementById('insert_lastname').value;
+    emailCell.textContent = document.getElementById('insert_email').value;
+    // Note: For security reasons, you shouldn't populate the password field here.
+
+    // Append the cells to the new row
+    // newRow.appendChild(idCell);
+    newRow.appendChild(msisdnCell);
+    newRow.appendChild(firstnameCell);
+    newRow.appendChild(lastnameCell);
+    newRow.appendChild(emailCell);
+    // newRow.appendChild(customerOwnerIdCell);
+    // newRow.appendChild(customerUserIdCell);
+
+    // Note: You should not append the password field to the table for security reasons.
+
+    // Append the new row to the table
+    let tableBody = document.getElementById('subscriberTableBody');
+    tableBody.appendChild(newRow);
+
+    // Optionally, you can clear the form fields after insertion
+    document.getElementById('insert_msisdn').value = '';
+    document.getElementById('insert_firstname').value = '';
+    document.getElementById('insert_lastname').value = '';
+    document.getElementById('insert_email').value = '';
+    // Note: You should not clear the password field here for security reasons.
+
+
+</script>
+
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="index.js" charset="utf-8"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="index.js" charset="utf-8" ></script>
+
+<script>
+    AOS.init();
+</script>
+
+
+
+</body>
+</html>

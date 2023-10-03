@@ -1,0 +1,347 @@
+*{
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+
+html{
+	padding: 0px;
+	margin: 0px;
+	background-color: whitesmoke;
+	overflow-x: hidden;
+	width: auto;
+	height: auto;
+}
+
+body{
+	padding: 0px;
+	margin: 0px;
+	background-color: whitesmoke;
+	overflow-x: hidden;
+	width: auto;
+	height: auto;
+}
+
+nav li{
+	display: inline-block;
+	flex-wrap: wrap;
+	justify-content: center;
+	}
+
+.navigation, .navigation1{
+    color: black;
+	background-repeat: no-repeat;
+	width: 100vw;
+	height: 50px;
+	background-color: #0d6efd;
+	background-image: linear-gradient(whitesmoke, #0d6efd);
+	z-index: 1;
+	display: flex;
+  flex-wrap: wrap;
+}
+
+
+.nav_buttons{
+	position: absolute;
+	top: 0px;
+	right: 5px;
+	z-index: 1;
+	background-color: black;
+}
+
+
+li{
+	margin: 6px;
+	padding: 0px 5px;
+
+}
+
+li:hover {
+  background-color: whitesmoke; 
+  border-radius: 30%;
+}
+
+
+.bodyClass{
+	background-size: cover;
+	background-repeat: no-repeat;
+	width: 100vw;
+	height: auto;
+	color: black;
+	font-family: serif;
+}
+
+a {
+	color: black !important;
+	text-decoration: none !important;
+}
+
+
+.navigation1{
+    color: black;
+    background-repeat: no-repeat;
+	width: 100vw;
+	height: 50px;
+	background-color: #0d6efd;
+	background-image: linear-gradient(#0d6efd ,whitesmoke);
+	z-index: 1;
+	display: flex;
+  flex-wrap: wrap;
+}
+
+.left_nav_text1{
+	color: whitesmoke;
+	position: absolute;
+	top: 12px;
+	left: 20px;
+	z-index: 1;
+	padding: 10px;
+}
+
+.right_nav_text1{
+	color: whitesmoke;
+	position: absolute;
+	top: 12px;
+	right: 20px;
+	z-index: 1;
+	padding: 10px;
+
+}
+
+.navigation2{
+	/*background-image: url('C:/Users/Jnr/Desktop/Programming/Pious Website/Pious Website/pics/icon.png');*/
+	background-repeat: no-repeat;
+	width: 100%;
+	height: 100px;
+	background-color: #0d6efd;
+	background-image: linear-gradient(#0d6efd,whitesmoke);
+	z-index: 1;
+	display: inline-block;
+  flex-wrap: wrap;
+  margin-bottom: 0px;
+}
+
+.nav_pic_logo{
+	position: relative;
+	width: auto;
+	height: 80px;
+	clip-path: circle(); 
+	float: left;
+	margin-left: 50px;
+	margin-right: 15px;
+	top: 10px;
+}
+
+
+h3{
+	position: relative;
+	top: 25px;
+}
+
+.right_nav_text2 {
+	color: whitesmoke;
+	position: absolute;
+	top: 50px;
+	right: 10px;
+	z-index: 1;
+	padding: 10px;
+	margin: 10px;
+	display: inline-block;
+}
+
+.list{
+	display: inline-block;
+}
+
+
+
+
+
+.btn{
+	background-color: #212529;
+	border-color: black;
+	color: whitesmoke;
+}
+
+
+button{
+	background-color: #212529 !important;
+	padding: 10px;
+  border-radius: 5px;
+  color: whitesmoke;
+}
+
+.nav-text{
+	color: whitesmoke;
+	position: absolute;
+	top: 12px;
+	left: 12px;
+	z-index: 1;
+	font-family: sans-serif;
+}
+
+
+.menu {
+  display: flex;
+  justify-content: flex-end;
+  list-style: none;
+  padding: 0;
+}
+
+.menu li {
+  margin-right: 20px;
+}
+
+.menu li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 10px 0px 10px;
+}
+
+.navbar-icon {
+  display: none;
+  cursor: pointer;
+  color: #fff;
+  font-size: 20px;
+}
+
+
+.table{
+    box-shadow: 0 8.5px 17px rgba(0, 0, 0, 0.5) !important;
+}
+
+.bg-primary{
+    box-shadow: 0 8.5px 17px rgba(0, 0, 0, 0.5) !important;
+}
+
+#updateModal {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: auto;
+	padding: 100px;
+	background-color: rgba(0, 0, 0, 0.5);
+	display: none;
+	z-index: 1;
+
+}
+
+#insertModal{
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: auto;
+	padding: 100px;
+	background-color: rgba(0, 0, 0, 0.5);
+	display: none;
+	z-index: 1;
+
+}
+
+#detailsModal {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: auto;
+	padding: 100px;
+	background-color: rgba(0, 0, 0, 0.5);
+	display: none;
+	z-index: 1;
+}
+
+#statisticsModal {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: auto;
+	padding: 100px;
+	background-color: rgba(0, 0, 0, 0.5);
+	display: none;
+	z-index: 1;
+}
+
+#updateForm, #insertForm, #detailsForm, #statistics{
+	position: relative;
+	width: auto;
+	max-width: 400px;
+	margin: auto; /* Center the form horizontally */
+	background-image: linear-gradient(#0d6efd, whitesmoke, #0d6efd);
+	border-radius: 5px;
+	text-align: center;
+	padding: 20px;
+
+}
+
+.modal-content {
+	width: 240px;
+	position: relative;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: sans-serif;
+	background-color: #0d6efd;
+}
+
+.modal-overlay {
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	display: flex;
+	align-items: center; /* Center vertically */
+	justify-content: center;
+	position: relative;
+	z-index: 1;
+}
+
+.card-body{
+	background-color: #0d6efd;
+	font-family: sans-serif;
+	font-size: large;
+}
+
+.openInsertModalButton{
+	margin-bottom: 0 !important;
+	position: relative;
+	right: 50vw;
+	padding: 5px;
+}
+
+.submit {
+	display: block;
+	width: 100%;
+	max-width: 400px;
+	margin: 0; /* Center the button horizontally */
+	cursor: pointer;
+}
+
+.close {
+	position: relative;
+	width: 100%;
+	top: 0;
+	right: 0;
+	cursor: pointer;
+}
+
+.footer_socials{
+	position: absolute;
+	/*float: right;*/
+	right: 20px;
+}
+
+.footerClass{
+	height: 80px;
+	background-color: #0d6efd; 
+	color: whitesmoke; 
+	text-align: center; 
+	padding: 20px 0px 20px 0;
+	margin-top: 0px;
+    box-shadow: 0 8.5px 17px rgba(0, 0, 0, 0.5) !important;
+	display: flex;
+	align-items: center; /* Center vertically */
+	justify-content: center;
+
+}
